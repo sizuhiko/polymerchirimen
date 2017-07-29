@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/web-gpio/web-gpio.html">
+
+<dom-module id="polymerchirimen-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+    <web-gpio port="198" value="{{value198}}" read></web-gpio>
+    <p>開閉センサー：GPIOポート198の値は[[value198]]です。</p>
+    <web-gpio port="199" value="{{value199}}" read></web-gpio>
+    <p>人感センサー：GPIOポート199の値は[[value199]]です。</p>
+    <web-gpio port="192" value="{{value198}}" write></web-gpio>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'polymerchirimen-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'polymerchirimen-app',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
